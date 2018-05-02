@@ -22,7 +22,6 @@ if (temp >= 110) {
 // calcualte is child (if 7 or under)
 // calculate is senior (if 65 or older)
 // print both
-
 let age = 3
 
 // if 7 or under, print about child pricing
@@ -34,5 +33,4 @@ if (age <= 7) {
 
 if (age >= 65) {
     console.log('you get senior discount');
-    
 }
