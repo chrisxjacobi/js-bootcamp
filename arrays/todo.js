@@ -15,3 +15,10 @@ todos.forEach(function (todo, index) {
     let num = index + 1
     console.log(`${index + 1}. ${todo}`);  
 })
+
+for (let count = 0; count < todos.length; count++) {
+    let num = count + 1
+    let todo = todos[count]
+    console.log(`${num}. ${todo}`);
+    
+}
