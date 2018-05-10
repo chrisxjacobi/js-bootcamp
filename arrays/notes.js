@@ -38,8 +38,19 @@ const findNote = function (notes, noteTitle) {
     return notes.find(function (note, index) {
         return note.title.toLowerCase() === noteTitle.toLowerCase()
     })
+}
+
+const findNotes = function (notes, query) {
+    return notes.filter(function (note, index) {
+        const isTitleMatch = note.title.toLowerCase().includes(query.toLowerCase())
+        const isBodyMatch = note.body.toLowerCase().includes(query.toLowerCase())
+        return isTitleMatch || isBodyMatch
+    })
     
 }
+
+console.log(findNotes(notes, 'c'));
+
 
 // const findNote = function (notes, noteTitle) {
 //     const indexNote = notes.findIndex(function (note, index) {
@@ -48,8 +59,8 @@ const findNote = function (notes, noteTitle) {
 //     return notes[indexNote]
 // }
 
-const note = findNote(notes, 'Office mods')
-console.log(note);
+// const note = findNote(notes, 'Office mods')
+// console.log(note);
 
 
 // console.log(notes.length);

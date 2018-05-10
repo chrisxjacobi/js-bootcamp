@@ -27,16 +27,19 @@ const deleteTodo = function (todos, text) {
     }
 }
 
-deleteTodo(todos, 'go to gym')
-console.log(todos);
+// deleteTodo(todos, 'go to gym')
+// console.log(todos);
 
-    
-    
+
+const getThingsToDo = function (todos) {
+    return todos.filter(function (todo) {
+        return todo.completed === false
+    })
+}
+
+console.log(getThingsToDo(todos));
 
 // convert array to array of obj (text, completed), create function to remove by text value
-
-
-
 
 // delete third item, add new item on end, remove first item
 // todos.splice(2, 1)
