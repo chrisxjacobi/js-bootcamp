@@ -1,4 +1,4 @@
-// array with five todos, you have X todoes, print the first and second to last items
+// array with five todos, you have X todos, print the first and second to last items
 
 const todos = [{
     text: 'eat dinner',
@@ -16,6 +16,22 @@ const todos = [{
     text: 'pet sunny',
     completed: true
 }]
+
+const sortTodos = function (todos) {
+    todos.sort(function (a, b) {
+        if (a.completed === false && b.completed) {
+            return -1
+        } else if (a.completed && b.completed === false) {
+            return 1
+        } else {
+            return 0
+        }
+    })
+}
+
+sortTodos(todos)
+console.log(todos);
+
 
 const deleteTodo = function (todos, text) {
     const index = todos.findIndex(function (todo) {
@@ -37,7 +53,7 @@ const getThingsToDo = function (todos) {
     })
 }
 
-console.log(getThingsToDo(todos));
+//console.log(getThingsToDo(todos));
 
 // convert array to array of obj (text, completed), create function to remove by text value
 
@@ -47,6 +63,7 @@ console.log(getThingsToDo(todos));
 // todos.shift()
 
 // console.log(`You have ${todos.length} todos!`);
+
 
 // 1, first item, 2, second item, 3, third item
 
