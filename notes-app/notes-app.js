@@ -1,12 +1,12 @@
 const notes = [{
-    title: 'my next trip',
+    title: 'My next trip',
     body: 'I would like to go to Spain'
 }, {
     title: 'Habits to work on',
-    body: 'exercise'
+    body: 'Exercise'
 }, {
-    title: 'office mods',
-    body: 'get a new seat'
+    title: 'Office mods',
+    body: 'Get a new seat'
 }]
 
 const filters = {
@@ -15,34 +15,34 @@ const filters = {
 
 const renderNotes = function (notes, filters) {
     const filteredNotes = notes.filter(function (note) {
-        return note.title.toLowerCase().includes(filters.searchTexT.toLowerCase())
+        return note.title.toLowerCase().includes(filters.searchText.toLowerCase())
     })
-    
+
     document.querySelector('#notes').innerHTML = '';
 
     filteredNotes.forEach(function (note) {
-      const noteEl = document.createElement('p');
-      noteEl.textContent = note.title;
-      document.querySelector('#notes').appendChild(noteEl);
-    });
+        const noteEl = document.createElement('p')
+        noteEl.textContent = note.title
+        document.querySelector('#notes').appendChild(noteEl)
+    })
 }
 
-renderNotes(notes, filters)
+renderNotes(notes, filters);
 
-document.querySelector('#create-note').addEventListener('click', function(e) {
-  e.target.textContent = 'the button was clicked!'
-});
+document.querySelector('#create-note').addEventListener('click', function (e) {
+    e.target.textContent = 'The button was clicked'
+})
 
 document.querySelector('#remove-all').addEventListener('click', function () {
     document.querySelectorAll('.note').forEach(function (note) {
-        note.remove()
+        note.remove();
     })
-})
+});
 
 document.querySelector('#search-text').addEventListener('input', function (e) {
-    filters.searchText = e.target.value;
-    renderNotes(notes, filters)
-})
+    filters.searchText = e.target.value
+    renderNotes(notes, filters);
+});
 
 
 
@@ -82,3 +82,22 @@ button.inventory
 h1#title.application
 h1.application#title
 */
+
+//     searchText: ''
+// }
+
+// const renderNotes = function (notes, filters) {
+//     const filteredNotes = notes.filter(function (note) {
+//         return note.title.toLowerCase().includes(filters.searchText.toLowerCase())
+//     })
+
+//     document.querySelector('#notes').innerHTML = '';
+
+//     filteredNotes.forEach(function (note) {
+//       const noteEl = document.createElement('p');
+//       noteEl.textContent = note.title;
+//       document.querySelector('#notes').appendChild(noteEl);
+//     });
+// }
+
+// renderNotes(notes, filters)
