@@ -1,3 +1,5 @@
+// 'SourceCodePro-Medium', ＭＳ ゴシック, 'MS Gothic', monospace
+
 const todos = [{
     text: 'eat dinner',
     completed: false
@@ -42,6 +44,17 @@ todos.forEach(function (todo) {
     document.querySelector('body').appendChild(item);
 })
 
+// listen for new todo creation
 document.querySelector('#add-todo').addEventListener('click', function () {
     console.log('add a new todo!')
 })
+
+// listen for todo text change
+document.querySelector('#new-todo').addEventListener('input', function (e) {
+    console.log(e.target.value)
+})
+
+
+
+
+

@@ -40,7 +40,7 @@ p#order
 button.inventory
 h1#title.application
 h1.application#title
-*
+*/
 
 document.querySelector('#create-note').addEventListener('click', function(e) {
   e.target.textContent = 'the button was clicked!'
@@ -51,3 +51,14 @@ document.querySelector('#remove-all').addEventListener('click', function () {
         note.remove()
     })
 })
+
+document.querySelector('#search-text').addEventListener('input', function (e) {
+    console.log(e.target.value)
+})
+
+
+
+
+
+
+
