@@ -1,5 +1,3 @@
-// 'SourceCodePro-Medium', ＭＳ ゴシック, 'MS Gothic', monospace
-
 const todos = [{
     text: 'eat dinner',
     completed: false
@@ -17,18 +15,6 @@ const todos = [{
     completed: true
 }];
 
-// const paras = document.querySelectorAll('p')
-
-// paras.forEach(function (p) {
-//     if (p.textContent.includes('eat')) {
-//         p.remove()
-//     }
-
-// })
-
-
-// `you have __ todos left` (p element)
-// print p for each todo (use text of obj as text)
 
 const incompleteTodos = todos.filter(function (todo) {
     return !todo.completed
@@ -39,10 +25,10 @@ summary.textContent = `You have ${incompleteTodos.length} todos left!`;
 document.querySelector('body').appendChild(summary);
 
 todos.forEach(function (todo) {
-    const item = document.createElement('p')
+    const item = document.createElement('p');
     item.textContent = todo.text;
     document.querySelector('body').appendChild(item);
-})
+});
 
 // listen for new todo creation
 document.querySelector('#add-todo').addEventListener('click', function () {
@@ -58,3 +44,16 @@ document.querySelector('#new-todo').addEventListener('input', function (e) {
 
 
 
+
+// const paras = document.querySelectorAll('p')
+
+// paras.forEach(function (p) {
+//     if (p.textContent.includes('eat')) {
+//         p.remove()
+//     }
+
+// })
+
+
+// `you have __ todos left` (p element)
+// print p for each todo (use text of obj as text)
