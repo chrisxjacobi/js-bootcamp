@@ -13,7 +13,7 @@ const todos = [{
 }, {
     text: 'pet sunny',
     completed: true
-}]
+}];
 
 // const paras = document.querySelectorAll('p')
 
@@ -24,6 +24,7 @@ const todos = [{
 
 // })
 
+
 // `you have __ todos left` (p element)
 // print p for each todo (use text of obj as text)
 
@@ -31,42 +32,16 @@ const incompleteTodos = todos.filter(function (todo) {
     return !todo.completed
 })
 
-console.log(incompleteTodos);
-
-const summary = document.createElement('p');
-summary.textContent = `You have ${incompleteTodos.length} todos left`
-document.querySelector('body').appendChild(summary)
+const summary = document.createElement('h4');
+summary.textContent = `You have ${incompleteTodos.length} todos left!`;
+document.querySelector('body').appendChild(summary);
 
 todos.forEach(function (todo) {
-    const p = document.createElement('p')
-    p.textContent = todo.text
-    document.querySelector('body').appendChild(p)
+    const item = document.createElement('p')
+    item.textContent = todo.text;
+    document.querySelector('body').appendChild(item);
 })
 
-
-
-// const summary = document.createElement('p')
-// summary.textContent = `You have ${incompleteTodos.length} todos left!`
-// document.querySelector('body').appendChild(summary)
-
-// todos.forEach(function (todo) {
-//     const p = document.createElement('p')
-//     p.textContent = todo.text
-//     document.querySelector('body').appendChild(p)
-// })
-
-
-
-
-// const getThingsToDo = function (todos) {
-//     return todos.filter(function (todo) {
-//         return !todo.completed
-//     })
-// }
-// // Will print an array of all todos that still need to be completed
-// console.log(getThingsToDo(todos))
-
-
-
-
-
+document.querySelector('#add-todo').addEventListener('click', function () {
+    console.log('add a new todo!')
+})
