@@ -16,12 +16,22 @@ const todos = [{
 }];
 
 const filters = {
-    searchText: ' '
+    searchText: ' ',
+    hideCompleted: false
 }
 
 const renderTodos = function (todos, filters) {
-    const filteredTodos = todos.filter(function (todo) {
+
+    let filteredTodos = todos.filter(function (todo) {
         return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+    })
+
+    filteredTodos = filteredTodos.filter(function (todo) {
+        if (filters.hideCompleted) {
+            return !todo.completed
+        } else {
+            return true
+        }
     })
 
     const incompleteTodos = filteredTodos.filter(function (todo) {
@@ -50,7 +60,8 @@ document.querySelector('#search-text').addEventListener('input', function (e) {
     renderTodos(todos, filters)
 })
 
-document.querySelector('#new-todo').addEventListener('submit' , function(e) {
+// add new todo via form submission
+document.querySelector('#new-todo').addEventListener('submit', function (e) {
     e.preventDefault()
     todos.push({
         text: e.target.elements.text.value,
@@ -61,20 +72,25 @@ document.querySelector('#new-todo').addEventListener('submit' , function(e) {
     e.target.elements.text.value = ''
 })
 
+// hide completed todos via checked box
+document.querySelector('#hide-completed').addEventListener('change', function (e) {
+    filters.hideCompleted = e.target.checked
+    renderTodos(todos, filters)
+})
 
 
 
+// filteredTodos = filteredTodos.filter(function (todo) {
+    //     return !filters.hideCompleted || !todo.completed
+    // })
 
-
-// create a form with single input for todo text
-// setup a submit handler and cancel default action
-// add a new item to todos array with that text
-// rerender the app
-// clear the input field value
-
-
-
-
+//filteredTodos = filteredTodos.filter(function (todo) {
+    //     if (filters.hideCompleted) {
+    //         return !todo.completed
+    //     } else {
+    //         return true
+    //     }
+    // })
 
 
 
