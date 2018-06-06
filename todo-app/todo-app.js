@@ -2,49 +2,11 @@
 // read and parse data when app starts up
 // stringify and write the data when new data is added
 
-let todos = [];
+let todos = getSavedTodos()
 
 const filters = {
     searchText: ' ',
     hideCompleted: false
-}
-
-const todoJSON = localStorage.getItem('todos')
-
-if (todoJSON !== null) {
-  todos = JSON.parse(todoJSON)
-}
-
-const renderTodos = function (todos, filters) {
-
-    let filteredTodos = todos.filter(function (todo) {
-        return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
-    })
-
-    filteredTodos = filteredTodos.filter(function (todo) {
-        if (filters.hideCompleted) {
-            return !todo.completed
-        } else {
-            return true
-        }
-    })
-
-    const incompleteTodos = filteredTodos.filter(function (todo) {
-        return !todo.completed
-    })
-
-    document.querySelector('#todos').innerHTML = ''
-
-    const summary = document.createElement('h4');
-    summary.textContent = `You have ${incompleteTodos.length} todos left!`;
-    document.querySelector('#todos').appendChild(summary);
-
-
-    filteredTodos.forEach(function (todo) {
-        const todoEl = document.createElement('p');
-        todoEl.textContent = todo.text;
-        document.querySelector('#todos').appendChild(todoEl);
-    });
 }
 
 renderTodos(todos, filters)
@@ -62,7 +24,7 @@ document.querySelector('#new-todo').addEventListener('submit', function (e) {
         text: e.target.elements.text.value,
         completed: false
     })
-    localStorage.setItem('todos', JSON.stringify(todos))
+    saveTodos(todos)
     renderTodos(todos, filters)
     e.target.elements.text.value = ''
 })
