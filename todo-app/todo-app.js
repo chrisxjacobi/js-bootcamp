@@ -1,23 +1,18 @@
-const todos = [{
-    text: 'eat dinner',
-    completed: false
-}, {
-    text: 'walk the dog',
-    completed: false
-}, {
-    text: 'go to gym',
-    completed: true
-}, {
-    text: 'kiss bb',
-    completed: false
-}, {
-    text: 'pet sunny',
-    completed: true
-}];
+// delete dummy data
+// read and parse data when app starts up
+// stringify and write the data when new data is added
+
+let todos = [];
 
 const filters = {
     searchText: ' ',
     hideCompleted: false
+}
+
+const todoJSON = localStorage.getItem('todos')
+
+if (todoJSON !== null) {
+  todos = JSON.parse(todoJSON)
 }
 
 const renderTodos = function (todos, filters) {
@@ -67,7 +62,7 @@ document.querySelector('#new-todo').addEventListener('submit', function (e) {
         text: e.target.elements.text.value,
         completed: false
     })
-
+    localStorage.setItem('todos', JSON.stringify(todos))
     renderTodos(todos, filters)
     e.target.elements.text.value = ''
 })
@@ -77,32 +72,3 @@ document.querySelector('#hide-completed').addEventListener('change', function (e
     filters.hideCompleted = e.target.checked
     renderTodos(todos, filters)
 })
-
-
-
-// filteredTodos = filteredTodos.filter(function (todo) {
-    //     return !filters.hideCompleted || !todo.completed
-    // })
-
-//filteredTodos = filteredTodos.filter(function (todo) {
-    //     if (filters.hideCompleted) {
-    //         return !todo.completed
-    //     } else {
-    //         return true
-    //     }
-    // })
-
-
-
-// const paras = document.querySelectorAll('p')
-
-// paras.forEach(function (p) {
-//     if (p.textContent.includes('eat')) {
-//         p.remove()
-//     }
-
-// })
-
-
-// `you have __ todos left` (p element)
-// print p for each todo (use text of obj as text)
