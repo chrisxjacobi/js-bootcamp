@@ -16,7 +16,6 @@ const saveTodos = function (todos) {
 
 // render application todos based on filteredTodos
 const renderTodos = function (todos, filters) {
-
     let filteredTodos = todos.filter(function (todo) {
         return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
     })
