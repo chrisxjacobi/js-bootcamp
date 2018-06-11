@@ -7,7 +7,11 @@ const filters = {
 renderNotes(notes, filters);
 
 document.querySelector('#create-note').addEventListener('click', function(e) {
-  notes.push({title: '', body: ''})
+  notes.push({
+    id: uuidv4(),
+    title: '',
+    body: ''
+  })
   saveNotes(notes)
   renderNotes(notes, filters)
 })
