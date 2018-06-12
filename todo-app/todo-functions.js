@@ -14,6 +14,17 @@ const saveTodos = function (todos) {
   localStorage.setItem('todos', JSON.stringify(todos))
 }
 
+// remove a todo by id
+const removeTodo = function (id) {
+  const todoIndex = todos.findIndex(function (todo) {
+    return todo.id === id
+  })
+
+  if (todoIndex > -1) {
+    todos.splice(todoIndex, 1)
+  }
+}
+
 // render application todos based on filteredTodos
 const renderTodos = function (todos, filters) {
     let filteredTodos = todos.filter(function (todo) {
@@ -58,7 +69,12 @@ const generateTodoDOM = function (todo) {
   // set up removeButton
   removeButton.textContent = 'x'
   todoEl.appendChild(removeButton)
-  
+  removeButton.addEventListener('click', function () {
+    removeTodo(todo.id)
+    saveTodos(todos)
+    renderTodos(todos, filters)
+  })
+
   return todoEl
 }
 
