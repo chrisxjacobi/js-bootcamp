@@ -1,8 +1,4 @@
-// delete dummy data
-// read and parse data when app starts up
-// stringify and write the data when new data is added
-
-let todos = getSavedTodos()
+const todos = getSavedTodos()
 
 const filters = {
     searchText: ' ',
