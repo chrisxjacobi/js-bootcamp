@@ -1,6 +1,7 @@
 let temp = 180
 
-// logical and operator, if both sides are true (fals otherwise)
+// logical and operator, if both sides are true (fails otherwise)
+// logical or operator, if at least one side is true
 
 if (temp >= 60 && temp <= 90) {
     console.log('Its pretty nice out');
@@ -22,11 +23,11 @@ let isGuestTwoVegan = false
 
 if (isGuestOneVegan && isGuestTwoVegan) {
     console.log('we offer vegan food');
-    
+
 } else if (isGuestOneVegan || isGuestTwoVegan) {
     console.log('we offer many things, some vegan');
-    
+
 } else {
     console.log('Meat only options!');
-    
+
 }

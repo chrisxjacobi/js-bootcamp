@@ -1,9 +1,9 @@
 // additional conditional statements plus and/or operators,
 // scoping, basic functions/undefined/null
-// 
+//
 
-let isAccountLocked = false
-let userRole = 'user'
+let isAccountLocked = true
+let userRole = 'admin'
 
 
 if (isAccountLocked) {

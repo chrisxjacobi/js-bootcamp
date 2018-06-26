@@ -8,9 +8,8 @@ console.log(dogYears);
   // max score
   // percent - final
 
-  let studentScore = 70
-  let maxScore = 75
+  let studentScore = 41
+  let maxScore = 100
 
   let percent = (studentScore / maxScore) * 100;
   console.log(percent);
-  
