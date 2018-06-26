@@ -8,6 +8,7 @@ let convertFahrenheitToCelsius = function (fahrenheit) {
     if (celsius <= 0) {
         let isFreezing = true
     }
+    
     return celsius
 }
 

@@ -1,4 +1,5 @@
 // multiple arguments
+
 let add = function (a, b, c) {
     return a + b + c
 }
@@ -9,7 +10,7 @@ console.log(result);
 // default arguments
 let getScoreText = function (name = 'Anonymous', score = 0) {
     return `Name: ${name} - Score: ${score}`
-    
+
 }
 
 let scoreText = getScoreText(undefined, 99)
@@ -24,10 +25,8 @@ let getTip = function (bill, tipPercentage = .1) {
     let total = bill + (bill * tipPercentage);
    // return `Bill: $${bill}, Tip: $${bill * tipPercentage}, Total: $${total}.`
     return `A ${percent}% tip on $${bill} would be $${tip}`
-    
+
 }
 
 let totalBill = getTip(50)
 console.log(totalBill);
-
-

@@ -1,11 +1,12 @@
 // undefined is absence of value (for variable)
+
 let name
 
 name = 'michelle'
 
 if (name === undefined) {
     console.log('please provide a name');
-    
+
 } else {
     console.log(name);
 }
@@ -18,7 +19,7 @@ let square = function (num) {
 let result = square()
 console.log(result);
 
-// null as assigned value
+// null as explicitly assigned value by the developer
 let age = 27
 age = null
 console.log(age);

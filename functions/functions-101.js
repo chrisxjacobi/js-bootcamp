@@ -1,4 +1,5 @@
-// function - input, code, output (return value)
+// function - input (argument), code, output (return value)
+
 
 let greetUser = function () {
     console.log('Welcome, user!');
