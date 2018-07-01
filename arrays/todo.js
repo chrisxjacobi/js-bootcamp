@@ -1,27 +1,51 @@
-const todos = ['feed the cat', 'go to movies', 'go to gym', 'get haircut', 'buy groceries']
-
-todos.splice(2, 1)
-todos.push('watch more videos')
-todos.shift()
-
-console.log(`You have ${todos.length} todos`);
-
-todos.forEach(function(todo, index) {
-  console.log(`${index + 1}: ${todo}`);
-})
-
-
-
-
-
-
-
+const todos = [{
+  text: 'go to movy',
+  completed: true
+}, {
+  text: 'make breakfast',
+  completed: false
+}, {
+  text: 'go to gym',
+  completed: false
+}, {
+  text: 'get haircut',
+  completed: false
+}, {
+  text: 'watch world cup',
+  completed: true
+}]
 
 
+const deleteTodo = function(todos, todoText) {
+  const index = todos.findIndex(function (todo, index) {
+    return todo.text.toLowerCase() === todoText.toLowerCase()
+  })
+
+  if (index > -1) {
+    todos.splice(index, 1)
+  }
+}
+
+deleteTodo(todos, 'go to gym')
+console.log(todos);
 
 
 
 
+// todos.splice(2, 1)
+// todos.push('watch more videos')
+// todos.shift()
+//
+// console.log(`You have ${todos.length} todos`);
+//
+// todos.forEach(function(todo, index) {
+//   console.log(`${index + 1}: ${todo}`);
+// })
+//
+//
+// for (let count = 0; count < todos.length; count++) {
+//   console.log(`${count + 1}: ${todos[count]} `);
+// }
 
 
 // // array with five todos, you have X todos, print the first and second to last items
