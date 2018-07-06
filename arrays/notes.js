@@ -9,7 +9,7 @@ const notes = [{
   body: 'get a new chair'
 }]
 
-console.log('A' < 'a');
+// console.log('A' < 'a');
 
 const sortNotes = function (notes) {
   notes.sort(function (a, b) {
