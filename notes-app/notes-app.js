@@ -9,19 +9,12 @@ const notes = [{
   body: 'get a new chair'
 }]
 
-// query and remove
-// const p = document.querySelector('p')
-// p.remove()
-
-// query all and remove
-let ps = document.querySelectorAll('p')
-
-ps.forEach(function (p) {
-    p.textContent = '****'
-    //console.log(p.textContent)
+document.querySelector('#create-note').addEventListener('click', function (e) {
+    e.target.textContent = 'the button was clicked'
 })
 
-// add new element
-const newPara = document.createElement('p')
-newPara.textContent = 'This is a new element from JS'
-document.querySelector('body').appendChild(newPara)
+document.querySelector('#remove-all').addEventListener('click', function() {
+  document.querySelectorAll('.note').forEach(function(note) {
+      note.remove()
+  })
+})
